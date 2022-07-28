@@ -3,4 +3,6 @@ export {default as MainContainer} from "./MainContainer";
 export {default as Admin} from "./Admin";
 export {default as Login} from "./Login";
 export {default as Signup} from "./Signup";
-export {default as Restaurant} from "./Restaurant"
+export {default as Restaurant} from "./Restaurant";
+export {default as Home} from "./Home"
+export {default as Loader} from "./Loader"
