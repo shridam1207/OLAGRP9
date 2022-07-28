@@ -18,10 +18,10 @@ const Admin = () => {
   const uploadImage=(e)=>{
     setIsLoading(true);
     const imageFile=e.target.files[0];
-    getBase64(file).then(base64 => {
-      localStorage["fileBase64"] = base64;
-      console.debug("file stored",base64);
-    });
+    // getBase64(file).then(base64 => {
+    //   localStorage["fileBase64"] = base64;
+    //   console.debug("file stored",base64);
+    // });
     }
   const getBase64 = (file) => {
     return new Promise((resolve,reject) => {
