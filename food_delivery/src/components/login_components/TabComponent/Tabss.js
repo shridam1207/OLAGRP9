@@ -1,8 +1,8 @@
 import React from "react";
-import Paper from "@material-ui/core/Paper";
-import Tab from "@material-ui/core/Tab";
-import Tabs from "@material-ui/core/Tabs";
-  
+import Paper from "@mui/material/Paper";
+import Tab from "@mui/material/Tab";
+import Tabs from '@mui/material/Tabs';
+
 const Tabss = () => {
   const [value, setValue] = React.useState(2);
   
@@ -16,7 +16,7 @@ const Tabss = () => {
     >
       {/* <h2>How to Create Tabs in ReactJS?</h2> */}
       <Paper square>
-        <Tabs
+        <Tabs className='bg-gray-300'
           value={value}
           // backgroundColor="yellow"
           textColor="primary"

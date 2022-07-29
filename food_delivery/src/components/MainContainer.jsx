@@ -1,22 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react'
+import Cart from './Cart'
 import { Home } from './Home'
 import { motion } from 'framer-motion';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import RowContainer from './RowContainer';
-import {useStateValue} from'../context/StateProvider';
 import { dummyData, heroData } from '../utils/data';
+import MenuContainer from './MenuContainer'
+import {useStateValue} from "../context/StateProvider"
 
 
 const MainContainer = () => {
-    const [{foodItems},dispatch] = useStateValue()
-
-    const [scrollValue, setScrollValue]=useState(0)
-
+    const[{foodItems, cartShow},dispatch]=useStateValue();
+    const[scrollValue, setScrollValue]=useState(0)
     useEffect(()=>{},[scrollValue])
+    useEffect(()=>{},[cartShow]);
     return (
         <div className='w-full h-auto flex flex-col items-center justify-center  '>
             <Home/>
-
             <section className='w-full my-6'>
                 <div className='w-full flex items-center justify-between'>
                     <p className='text-2xl font-semibold capitalize text-headingColor relative
@@ -49,6 +49,11 @@ const MainContainer = () => {
                 flag={true} 
                 data={dummyData?.filter((n)=>n.category==="fruits")}/>
             </section>
+            <MenuContainer/>
+            {
+                cartShow && (<Cart/>)
+            }
+            {/* <Cart/> */}
         </div>
     )
 }

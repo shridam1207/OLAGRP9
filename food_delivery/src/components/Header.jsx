@@ -4,12 +4,22 @@ import { BsCart4 } from "react-icons/bs"
 import Avatar from "./img/avatar.png"
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { useStateValue } from '../context/StateProvider'
+import { actionType } from '../context/reducer'
 // import { useStateValue } from '../context/StateProvider'
 
 
 const Header = () => {
   // const[{user},dispatch]=useStateValue();
   // const [isMenu, setisMenu] = useState(false)
+  const[{cartShow, cartItems}, dispatch]=useStateValue()
+
+  const showCart=()=>{
+    dispatch({
+      type: actionType.SET_CART_SHOW,
+      cartShow:!cartShow
+    })
+  }
 
   return (
     <div className=" z-50 w-screen bg-slate-300 p-3 px-4 md:p-6 md:px=16 bg-primary">
@@ -26,17 +36,19 @@ const Header = () => {
             <Link to={"/restaurant"} className="text-bse text-textColor hover:text-headingColor cursor-pointer duration-100 transition-all ease-in-out cursor-pointer">
               Restaurant
             </Link>
-            <li className="text-bse text-textColor hover:text-headingColor cursor-pointer duration-100 transition-all ease-in-out cursor-pointer">
-              Contact us</li>
+            <Link to={"/contact"} className="text-bse text-textColor hover:text-headingColor cursor-pointer duration-100 transition-all ease-in-out cursor-pointer">
+              Contact us</Link>
             <Link to={"/login"} className="text-bse text-textColor hover:bg-gray-200 rounded py-2 px-4 bg-white hover:text-headingColor cursor-pointer duration-100 transition-all ease-in-out cursor-pointer">
               Sign In</Link>
           </motion.ul>
         
-          <div className='relative flex items-center justify-center'>
+          <div className='relative flex items-center justify-center' onClick={showCart}>
             <BsCart4 className='text-textColor text-2xl ml-8 cursor-pointer' />
-            <div className='absolute -top-0 -right-0 w-4 h-4 rounded-full bg-cartNumBg flex item-center justify-center'>
-              <p className=' -top-1 text-xs text-white font-semi-bold '>2</p>
+            {cartItems && cartItems.length>0 &&(
+              <div className='absolute -top-0 -right-0 w-4 h-4 rounded-full bg-cartNumBg flex item-center justify-center'>
+              <p className=' -top-1 text-xs text-white font-semi-bold '>{cartItems.length}</p>
             </div>
+            )}
           </div>
           <motion.img whileTap={{ scale: 0.8 }}
             src={Avatar} className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-2xl cursor-pointer rounded-full" alt="userprofile" />
@@ -54,11 +66,13 @@ const Header = () => {
 
       <div className="flex items-center justify-between md:hidden w-full h-full ">
         
-        <div className='relative flex items-center justify-center'>
+        <div className='relative flex items-center justify-center' onClick={showCart}>
             <BsCart4 className='text-textColor text-2xl ml-8 cursor-pointer' />
-            <div className='absolute -top-0 -right-0 w-4 h-4 rounded-full bg-cartNumBg flex item-center justify-center'>
-              <p className=' -top-1 text-xs text-white font-semi-bold '>2</p>
+            {cartItems && cartItems.length>0 &&(
+              <div className='absolute -top-0 -right-0 w-4 h-4 rounded-full bg-cartNumBg flex item-center justify-center'>
+              <p className=' -top-1 text-xs text-white font-semi-bold '>{cartItems.length}</p>
             </div>
+            )}
           </div>
           <Link to={"/"} className='flex items-center gap-2'>
           <img src={Logo} className='w-10 object-cover' alt="logo" />
