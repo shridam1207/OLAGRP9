@@ -36,8 +36,8 @@ const Header = () => {
             <Link to={"/restaurant"} className="text-bse text-textColor hover:text-headingColor cursor-pointer duration-100 transition-all ease-in-out cursor-pointer">
               Restaurant
             </Link>
-            <li className="text-bse text-textColor hover:text-headingColor cursor-pointer duration-100 transition-all ease-in-out cursor-pointer">
-              Contact us</li>
+            <Link to={"/contact"} className="text-bse text-textColor hover:text-headingColor cursor-pointer duration-100 transition-all ease-in-out cursor-pointer">
+              Contact us</Link>
             <Link to={"/login"} className="text-bse text-textColor hover:bg-gray-200 rounded py-2 px-4 bg-white hover:text-headingColor cursor-pointer duration-100 transition-all ease-in-out cursor-pointer">
               Sign In</Link>
           </motion.ul>

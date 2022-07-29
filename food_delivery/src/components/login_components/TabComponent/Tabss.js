@@ -1,6 +1,6 @@
 import React from "react";
-// import Paper from "@mui/icons-material/Paper";
-import Tab from "@mui/icons-material/Tab";
+import Paper from "@mui/material/Paper";
+import Tab from "@mui/material/Tab";
 import Tabs from '@mui/material/Tabs';
 
 const Tabss = () => {
@@ -15,7 +15,7 @@ const Tabss = () => {
       }}
     >
       {/* <h2>How to Create Tabs in ReactJS?</h2> */}
-      {/* <Paper square> */}
+      <Paper square>
         <Tabs className='bg-gray-300'
           value={value}
           // backgroundColor="yellow"
@@ -31,7 +31,7 @@ const Tabss = () => {
           <Tab label="Active Tab Three" /> */}
         </Tabs>
         {/* <h3>TAB NO: {value} clicked!</h3> */}
-      {/* </Paper> */}
+      </Paper>
     </div>
   );
 };
