@@ -6,3 +6,4 @@ export {default as Signup} from "./Signup";
 export {default as Restaurant} from "./Restaurant";
 export {default as Home} from "./Home"
 export {default as Loader} from "./Loader"
+export {default as RowContainer} from "./RowContainer"
