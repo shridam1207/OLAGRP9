@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+// import store from './shared_login_components/store';
+import { Provider } from 'react-redux';
+import Signin from './login_components/login/signin';
 
-const Login = () => {
-  return (
-    <div>Login</div>
-  )
+class Login extends React.Component {
+  render() {
+    return (
+        <Signin />
+      // </Provider>
+    );
+  }
 }
 
-export default Login
+export default Login;
