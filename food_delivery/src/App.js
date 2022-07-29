@@ -1,7 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import React from 'react'
 import {AnimatePresence} from 'framer-motion'
-import { Admin, Header, MainContainer } from './components';
+import { Admin,  Header, MainContainer } from './components';
+import Contact from "./components/Contact"
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Restaurant from './components/Restaurant';
@@ -16,7 +17,7 @@ const App = () => {
           <Routes>
             <Route exact path='/*' element={<MainContainer />}/>
             <Route exact path='/Admin' element={<Admin />}/>
-            <Route exact path="/Signup" element={<Signup/>}/>
+            <Route exact path="/Contact" element={<Contact/>}/>
             <Route exact path="/Login" element={<Login/>}/>
             <Route exact path="/Restaurant" element={<Restaurant />}/>
           </Routes>
