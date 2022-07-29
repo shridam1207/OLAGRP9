@@ -24,21 +24,22 @@ const CartItem = ({item, flag, setFlag}) => {
             cartItems.map(item => {
                 if (item.id === id) {
                     item.qty += 1
-                    setFlag(flag+1)
+                    // setFlag(flag+1)
                 }
             })
             cartDispatch()
-        } else {
-            if (qty === 1) {
+        } 
+        else {
+            if (qty == 1) {
                 setItems(cartItems.filter((item) => item.id !== id))
-                setFlag(flag+1)
+                // setFlag(flag+1)
                 cartDispatch()
             } else {
                 setQty(qty - 1)
                 cartItems.map(item => {
                     if (item.id === id) {
                         item.qty -= 1
-                        setFlag(flag+1)
+                        // setFlag(flag+1)
                     }
                 })
                 cartDispatch()

@@ -21,7 +21,7 @@ const RowContainer =({flag,data,scrollValue}) =>{
             type:actionType.SET_CART_ITEMS,
             cartItems:items
         });
-        localStorage.setItem("cartItems",JSON.stringify(cartItems))
+        localStorage.setItem("cartItems",JSON.stringify(items))
     };
 
     useEffect(()=>{
